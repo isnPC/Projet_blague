@@ -4,7 +4,7 @@ afficher une blague au hasard parmis différentes catégories prédéfinies aupa
 1)demander l'âge de la personne
 2)catégoriser les blagues : faire des fichiers pour faire des catégories de blagues (fichiers blagues)
 3)afficher les catégories pour demander à l'utilisateur de laquelle il souhaite obtenir une blague
-4)afficher le contenu de chaque catégories (liste de blague)
+4)afficher le contenu de chaque catégorie (liste de blague)
 5)trier les blagues
 6)ajouter une nouvelle blague
 7) les blagues sont dites grace à une voix péalablement enregistrée
