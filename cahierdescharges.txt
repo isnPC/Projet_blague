@@ -1,4 +1,4 @@
-Cahier des charges : 
+﻿Cahier des charges : 
 application de blagues
 afficher une blague au hasard parmis différentes catégories prédéfinies auparavant
 1)demander l'âge de la personne
@@ -24,7 +24,7 @@ afficher une blague au hasard parmis différentes catégories prédéfinies aupa
 -faire du grafisme pour mettre l'application sur téléphone
 
 pour le 4mars : faires tous les fichiers avec les différentes blagues
--Clarisse : annimux et blondes
+-Clarisse : animaux et blondes
 -Tom :  beaufs, devinettes et malades
 -Fabio : toc toc, raciste, sexuelles
 
