@@ -1,4 +1,4 @@
-Cahier des charges : 
+﻿Cahier des charges : 
 application de blagues
 afficher une blague au hasard parmis différentes catégories prédéfinies auparavant
 1)demander l'âge de la personne
@@ -38,3 +38,4 @@ pour le 17 mars : faire les fonctions
 pour le 27 mars : 
 -Clarisse : 
 -Tom : 
+bob
