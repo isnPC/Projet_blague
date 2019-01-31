@@ -24,7 +24,7 @@ afficher une blague au hasard parmis différentes catégories prédéfinies aupa
 -faire du grafisme pour mettre l'application sur téléphone
 
 pour le 4mars : faires tous les fichiers avec les différentes blagues
--Clarisse : animaux et blondes
+-Clarisse : animaux, blondes et scientifiques
 -Tom :  beaufs, devinettes et malades
 -Fabio : toc toc, raciste, sexuelles
 
