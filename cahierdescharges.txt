@@ -1,4 +1,4 @@
-﻿Cahier des charges : 
+Cahier des charges : 
 application de blagues
 afficher une blague au hasard parmis différentes catégories prédéfinies auparavant
 1)demander l'âge de la personne
@@ -8,7 +8,7 @@ afficher une blague au hasard parmis différentes catégories prédéfinies aupa
 5)trier les blagues
 6)ajouter une nouvelle blague
 7) les blagues sont dites grace à une voix péalablement enregistrée
-8)fonction aléatoir : une blague choisi au hasard parmis tout les fichiers
+8)fonction aléatoire : une blague choisi au hasard parmis tout les fichiers
 
 
 
@@ -24,18 +24,18 @@ afficher une blague au hasard parmis différentes catégories prédéfinies aupa
 -faire du grafisme pour mettre l'application sur téléphone
 
 pour le 4mars : faires tous les fichiers avec les différentes blagues
--Clarisse :
--Tom :
--Fabio : 
+-Clarisse : annimux et blondes
+-Tom :  beaufs, devinettes et malades
+-Fabio : toc toc, raciste, sexuelles
 
 
-pour le 17 mars : faire les fonctions
--Clarisse : prnedre une blague au hasard parmis tout les fichiers attribuer en fonction de l'age de l'utilisateur
+pour le 17 mars : faire les fonctions suivantes
+-Clarisse : prendre une blague au hasard parmis tout les fichiers attribuer en fonction de l'age de l'utilisateur
 -Tom : demander l'âge du joueur et attribuer les bons fichiers de blagues en fonction de l'age
 -Fabio : faire la fonction qui choisi une blague au hasard dans le fichier demander
 
 
-pour le 27 mars : 
+pour le 27 mars : faire les fonction
 -Clarisse : 
 -Tom : 
-bob
+-Fabio : ajouter une une blague et la catégoriser
