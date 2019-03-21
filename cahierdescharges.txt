@@ -36,6 +36,6 @@ pour le 17 mars : faire les fonctions suivantes
 
 
 pour le 27 mars : faire les fonction
--Clarisse : 
+-Clarisse : fonction Aléatoire avec parametre variable pour la fin de la liste
 -Tom : 
--Fabio : ajouter une une blague et la catégoriser
+-Fabio : creer une fonction ajout de blague fonctionnelle
