@@ -1,5 +1,17 @@
 import tkinter as tk
+import random
 from tkinter import messagebox as mb
+
+
+def compteBlague(blague) :
+    nb=0
+    with open (blague, encoding = 'utf-8') as l :
+        for ligne in l:
+            if ligne[0:2] == '**':
+                nb += 1
+        return nb
+
+
 
 
 def ouvertureBlague(fichier):
@@ -16,7 +28,7 @@ def ouvrir(Blagues):
             msg2 += ligne
     mb.showinfo(Blagues,msg2)
 
-def rechercheBlague(blagues, num):
+def rechercheBlague(blagues, num_cherche):
     """renvoie une blague numero num dans le fichier nomé blagues
        paramètre : nom fichier
                    numero blague
@@ -24,24 +36,33 @@ def rechercheBlague(blagues, num):
                entier
        sortie : la blague
        stype : chaine de caractère """
-    msg3=""
-    zone = False
+    blague = ""
     with open (blagues, encoding = 'utf-8') as fic :
         for ligne in fic:
-            if ligne[0:2] != '**' and zone :
-                msg3 = msg3 + ligne
             if ligne[0:2] == '**':
-                if int(ligne[2]) == num:
-                    zone = True
-                else:
-                    zone = False
-        return msg3 
+                if int(ligne[2:]) == num_cherche:
+                    break
+                
+        for ligne in fic:
+            if ligne[0:2] != '**':
+                blague = blague + ligne
+            else:
+                break
+        return blague
 
+def rechercheBlagueAlea(blagues):
+    nbTotalBlague=compteBlague(blagues)
+    numBlagueAlea=random.randint(1,nbTotalBlague)
+    blagueAlea = rechercheBlague(blagues, numBlagueAlea)
+    return blagueAlea
+    
+    
+#compteBlague(monTitre+".txt")
 def newWindow2(monTitre):
     fen3=tk.Tk()
     fen3.title(monTitre)
     fen3.geometry("450x175")
-    boutFen3_1 = tk.Button(fen3,text="Aléatoire", command= lambda: mb.showinfo("titre", rechercheBlague(monTitre+".txt",1)))
+    boutFen3_1 = tk.Button(fen3,text="Aléatoire", command= lambda: mb.showinfo("titre", rechercheBlagueAlea(monTitre+".txt")))
     boutFen3_1.grid(row=1,column=1)
     boutFen3_2 = tk.Button(fen3,text="Blagues les mieux notées")
     boutFen3_2.grid(row=1,column=3)
@@ -86,7 +107,7 @@ boutS2.grid(row=6,column=4)
 tk.Label(text="Choisissez votre catégorie de blague :").grid(row=1,column=1)
 boutT = tk.Button(text="Toutes les blagues",command=lambda : ouvrir("Blagues"))
 boutT.grid(row=7,column=3)
-boutAl = tk.Button(text="Aléatoire", command= lambda: mb.showinfo("titre", rechercheBlague("blagues.txt",1)))
+boutAl = tk.Button(text="Aléatoire", command= lambda: mb.showinfo("titre", rechercheBlague("blagues.txt",)))
 boutAl.grid(row=5,column=1)
 fen1.mainloop()
 
