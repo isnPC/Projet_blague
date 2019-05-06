@@ -65,6 +65,7 @@ def Mineur():
     fen4.title("Quel âge avez- vous ?")
     fen4.geometry("600x200")
     fen4.resizable(width=False,height=False)
+    boutAl1 = tk.Button(fen4,text="Aléatoire", command= lambda: mb.showinfo("titre", rechercheBlagueAlea("ToutesLesBlagues-18.txt")))
     boutB = tk.Button(text="Blondes",command=lambda : newWindow3("Blondes"))
     boutB.grid(row=2,column=2)
     boutS = tk.Button(text="Scientifiques",command=lambda : newWindow3("Scientifiques"))
@@ -74,9 +75,11 @@ def Mineur():
     boutTT = tk.Button(text="Toc Toc",command=lambda : newWindow3("TocToc"))
     boutTT.grid(row=3,column=4)
     boutD = tk.Button(text="Devinettes",command=lambda : newWindow3("Devinettes"))
-    boutD.grid(row=4,column=3)
+    boutD.grid(row=4,column=4)
     boutF=tk.Button(text="Fermer",command=fen4.destroy)
     boutF.grid(row=5,column=3)
+    boutAl = tk.Button(text="Aléatoire",  command= lambda: mb.showinfo("titre", rechercheBlagueAlea("ToutesLesBlagues-18.txt")))
+    boutAl.grid(row=4,column=2)
     tk.Label(text="Choisissez votre catégorie de blagues à afficher").grid(row=4,column=1)
 
 
