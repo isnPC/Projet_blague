@@ -1,4 +1,5 @@
 import tkinter as tk
+import random
 from tkinter import messagebox as mb
 
 def ouvertureBlague(monTitre):
@@ -13,6 +14,50 @@ def ouvertureBlague(fichier):
         for ligne in fic:
             msg+= ligne
     mb.showinfo(fichier,msg)
+
+
+def compteBlague(blague) :
+    nb=0
+    with open (blague, encoding = 'utf-8') as l :
+        for ligne in l:
+            if ligne[0:2] == '**':
+                nb += 1
+    return nb
+
+
+
+def rechercheBlague(blagues, num_cherche):
+    """renvoie une blague numero num dans le fichier nomé blagues
+       paramètre : nom fichier
+                   numero blague
+       ptype : chaine de caractère
+               entier
+       sortie : la blague
+       stype : chaine de caractère """
+    blague = ""
+    with open (blagues, encoding = 'utf-8') as fic :
+        for ligne in fic:
+            if ligne[0:2] == '**':
+                if int(ligne[2:]) == num_cherche:
+                    break
+                
+        for ligne in fic:
+            if ligne[0:2] != '**':
+                blague = blague + ligne
+            else:
+                break
+        return blague
+
+def rechercheBlagueAlea(blagues):
+    nbTotalBlague=compteBlague(blagues)
+    numBlagueAlea=random.randint(1,nbTotalBlague)
+    blagueAlea = rechercheBlague(blagues, numBlagueAlea)
+    return blagueAlea
+
+
+
+
+
 
 def Mineur():
     fen1.destroy()
@@ -62,14 +107,15 @@ def Majeur():
     boutF=tk.Button(text="Fermer",command=fen2.destroy)
     boutF.grid(row=6,column=3)
     tk.Label(text="Choisissez votre catégorie de blague :").grid(row=1,column=1)
-
+    boutAl = tk.Button(text="Aléatoire",  command= lambda: mb.showinfo("titre", rechercheBlagueAlea("ToutesLesBlagues+18.txt")))
+    boutAl.grid(row=5,column=1)
 
 def newWindow3(monTitre):
     fen3=tk.Tk()
     fen3.title(monTitre)
     fen3.geometry("450x175")
     fen3.resizable(width=False,height=False)
-    boutFen3_1 = tk.Button(fen3,text="Aléatoire")
+    boutFen3_1 = tk.Button(fen3,text="Aléatoire" ,command= lambda: mb.showinfo("titre", rechercheBlagueAlea(monTitre+".txt")))
     boutFen3_1.grid(row=1,column=1)
     boutFen3_2 = tk.Button(fen3,text="Blagues les mieux notées")
     boutFen3_2.grid(row=1,column=3)
@@ -84,14 +130,13 @@ def newWindow3(monTitre):
     fen3.mainloop()
 
 
-
 fen1=tk.Tk()
 fen1.title("Quel âge avez-vous ?")
 fen1.geometry("350x200")
 fen1.resizable(width=False,height=False)
 
 tk.Label(text="Quel âge avez vous ?").grid(row=1,column=1)
-boutMi=tk.Button(text="-18",width=10,height=5,command=Mineur,bg="white")
+boutMi=tk.Button(text="-18",width=10,height=5,command=Mineur,bg="green")
 boutMi.grid(row=5,column=1 ,padx=30, pady=30)
 boutMa=tk.Button(text="+18",width=10,height=5,command=Majeur,bg ="red")
 boutMa.grid(row=5,column=2 ,padx=30, pady=30)
