@@ -87,8 +87,6 @@ def ajouterBlague(fichier):
     maBlague.write(Blague+'\n')
     maBlague.close()
 
-#    ajouterBlague(monTitre)
-
 
 def Mineur():
     #fenêtre affichant les boutons pour une personne ayant mois de 18 ans
