@@ -12,8 +12,8 @@ def ouvertureBlague(monTitre):
         for ligne in fic:
             print(ligne)
 
-def ouvertureBlague(fichier):
-    """affiche les balgues du fichier correspondant
+def ouvertureToutesBlagues(fichier):
+    """affiche ce que comporte un fichier en entier correspondant
     paramètre : nom fichier
     ptype : chaine de caractère
     sortie : les blague
@@ -155,7 +155,7 @@ def newWindow3(monTitre):
     boutFen3_1.grid(row=1,column=1)
     boutFen3_2 = tk.Button(fen3,text="Ajouter une blague", command = lambda: ajouterBlague(monTitre+".txt"),bg ="lightpink1")
     boutFen3_2.grid(row=1,column=3)
-    boutFen3_3 = tk.Button(fen3,text="Toutes les blagues", command = lambda : ouvertureBlague(monTitre+".txt"),bg ="plum1")
+    boutFen3_3 = tk.Button(fen3,text="Toutes les blagues", command = lambda : ouvertureToutesBlagues(monTitre+".txt"),bg ="plum1")
     boutFen3_3.grid(row=2,column=1)
     boutFen3_4 = tk.Button(fen3,text="Rechercher blagues",bg ="salmon1")
     boutFen3_4.grid(row=2,column=3)
