@@ -2,12 +2,24 @@ import tkinter as tk
 import random
 from tkinter import messagebox as mb
 
+
 def ouvertureBlague(monTitre):
+    """affiche une balgue du fichier correspondant
+    paramètre : nom fichier
+    ptype : chaine de caractère
+    sortie : la blague
+    stype : chaine de caractère """
     with open(monTitre, encoding='utf-8') as fic:
         for ligne in fic:
             print(ligne)
 
+            
 def ouvertureBlague(fichier):
+    """affiche les balgues du fichier correspondant
+    paramètre : nom fichier
+    ptype : chaine de caractère
+    sortie : les blague
+    stype : chaine de caractère """
     msg=""
     with open (fichier,encoding="utf-8",mode='r') as fic:
         for ligne in fic:
@@ -15,14 +27,18 @@ def ouvertureBlague(fichier):
     mb.showinfo(fichier,msg)
 
 
-def compteBlague(blague) :
+def compteBlague(blague):
+    """compte le nombre de blagues dans le fichier
+    paramètre : les blagues du fichier
+    ptype : chaine de caractère
+    sortie : le nombre de blague du fichier
+    stype : entier """
     nb=0
     with open (blague, encoding = 'utf-8') as l :
         for ligne in l:
             if ligne[0:2] == '**':
                 nb += 1
     return nb
-
 
 
 def rechercheBlague(blagues, num_cherche):
@@ -47,18 +63,21 @@ def rechercheBlague(blagues, num_cherche):
                 break
         return blague
 
+    
 def rechercheBlagueAlea(blagues):
+    """choisit une blague au hasard parmis différentes proposées
+    paramètre : nom fichier
+    ptype : chaine de caractère
+    sortie : la blague
+    stype : chaine de caractère """
     nbTotalBlague=compteBlague(blagues)
     numBlagueAlea=random.randint(1,nbTotalBlague)
     blagueAlea = rechercheBlague(blagues, numBlagueAlea)
     return blagueAlea
 
 
-
-
-
-
 def Mineur():
+    #fenêtre affichant les boutons pour une personne ayant mois de 18 ans
     fen1.destroy()
     fen4=tk.Tk()
     fen4.title("Quel âge avez- vous ?")
@@ -83,6 +102,7 @@ def Mineur():
 
 
 def Majeur():
+    #fenêtre affichant les boutons pour une personne ayant plus de 18 ans
     fen1.destroy()
     fen2=tk.Tk()
     fen2.title("Categories")
@@ -112,7 +132,9 @@ def Majeur():
     boutAl = tk.Button(text="Aléatoire",  command= lambda: mb.showinfo("titre", rechercheBlagueAlea("ToutesLesBlagues+18.txt")))
     boutAl.grid(row=5,column=1)
 
+    
 def newWindow3(monTitre):
+    #fenêtre affichant les boutons pour une personne ayant plus de 18 ans
     fen3=tk.Tk()
     fen3.title(monTitre)
     fen3.geometry("450x175")
@@ -127,8 +149,6 @@ def newWindow3(monTitre):
     boutFen3_4.grid(row=2,column=3)
     boutFen3_5 = tk.Button(fen3,text="Fermer",command=fen3.destroy)
     boutFen3_5.grid(row=3,column=2)
-    
-    
     fen3.mainloop()
 
 
@@ -136,6 +156,7 @@ fen1=tk.Tk()
 fen1.title("Quel âge avez-vous ?")
 fen1.geometry("350x200")
 fen1.resizable(width=False,height=False)
+
 
 tk.Label(text="Quel âge avez vous ?").grid(row=1,column=1)
 boutMi=tk.Button(text="-18",width=10,height=5,command=Mineur,bg="green")
